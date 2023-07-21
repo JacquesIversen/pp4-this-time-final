@@ -121,5 +121,7 @@ python3 manage.py createsuperuser
 -- Crispy forms:
 pip3 install django-crispy-forms
 pip3 install crispy_bootstrap5
-
+pip3 freeze --local > requirements.txt
+-- Img management:
+pip3 install pillow
 
