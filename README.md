@@ -111,3 +111,15 @@ Happy coding!
 --- 
 pip3 install django
 django-admin startproject main .
+python3 manage.py startapp home
+pip3 install django-allauth
+-- Templates:
+ls ../.pip-modules/lib
+cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/* ./templates
+-- Superuser / admin:
+python3 manage.py createsuperuser
+-- Crispy forms:
+pip3 install django-crispy-forms
+pip3 install crispy_bootstrap5
+
+
