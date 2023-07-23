@@ -9,7 +9,7 @@
             <form method="POST">
                 {% csrf_token %}
                 <div class="pt-5">
-                    {% for full in fullDay %}
+                    {% for full in Full %}
                     <div class="row">
                         <div class="col-md-2 col-sm-12">
                             <img class="rounded" src="{{ full.image.url }}" width="150" height="100"/>
@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="pt-5">
-                    {% for half in halfDay %}
+                    {% for half in Half %}
                     <div class="row mt-4">
                         <div class="col-md-2 col-sm-12">
                             <img class="rounded" src="{{ half.image.url }}" width="150" height="100"/>
@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="pt-5">
-                    {% for hour in hourlyBase %}
+                    {% for hour in Hourly %}
                     <div class="row mt-4">
                         <div class="col-md-2 col-sm-12">
                             <img class="rounded" src="{{ hour.image.url }}" width="150" height="100"/>

@@ -13,16 +13,15 @@ class HomeView(TemplateView):
 class Order(View):
     def get(self, request, *args, **kwargs):
         # get every Variant from each duration
-        fullDay = Variant.objects.filter(
-            category__name__contains='Full Day')
-        halfDay = Variant.objects.filter(category__name__contains='Half Day')
-        hourlyBase = Variant.objects.filter(category__name__contains='Hourly Base')
+        full = Variant.objects.filter(category__name__contains='Full')
+        half = Variant.objects.filter(category__name__contains='Half')
+        hourly = Variant.objects.filter(category__name__contains='Hourly')
 
         # pass into context
         context = {
-            'Full Day': fullDay,
-            'Half Day': halfDay,
-            'Hourly Base': hourlyBase,
+            'Full': full,
+            'Half': half,
+            'Hourly': hourly,
         }
 
         # render the template
@@ -36,7 +35,7 @@ class Order(View):
         items = request.POST.getlist('items[]')
 
         for item in items:
-            menu_item = Variant.objects.get(pk__contains=int(item))
+            variant_item = Variant.objects.get(pk__contains=int(item))
             item_data = {
                 'id': variant_item.pk,
                 'name': variant_item.name,
@@ -60,4 +59,4 @@ class Order(View):
             'price': price
         }
 
-        return render(request, 'home/index.html', context)
+        return render(request, 'home/order_confirmation.html', context)
