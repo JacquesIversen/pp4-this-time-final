@@ -112,6 +112,7 @@ Happy coding!
 pip3 install django
 django-admin startproject main .
 python3 manage.py startapp home
+python3 manage.py startapp staff
 pip3 install django-allauth
 -- Templates:
 ls ../.pip-modules/lib
