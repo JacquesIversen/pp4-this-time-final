@@ -10,6 +10,11 @@ class HomeView(TemplateView):
     """
     template_name = 'home/index.html'
 
+
+class Find_usView(TemplateView):
+    template_name = 'home/order.html'
+
+
 class Order(View):
     def get(self, request, *args, **kwargs):
         variants = Variant.objects.all()
@@ -61,7 +66,7 @@ class Order(View):
         
 class Pricing(View):
     def get(self, request, *args, **kwargs):
-        variant_items = VariantItem.objects.all()
+        variant_items = Variant.objects.all()
 
         context = {
             'variant_items': variant_items
@@ -70,18 +75,3 @@ class Pricing(View):
         return render(request, 'home/pricing.html', context)
 
 
-class VariantSearch(View):
-    def get(self, request, *args, **kwargs):
-        query = self.request.GET.get("q")
-
-        variant_items = VariantItem.objects.filter(
-            Q(name__icontains=query) |
-            Q(price__icontains=query) |
-            Q(description__icontains=query)
-        )
-
-        context = {
-            'variant_items': variant_items
-        }
-
-        return render(request, 'home/pricing.html', context)

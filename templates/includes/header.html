@@ -14,16 +14,19 @@
             <a class="nav-link" href="{% url 'order' %}">Book Here!</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">Pricing</a>
+            <a class="nav-link" href="{% url 'pricing' %}">Pricing</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Find us</a>
+            <a class="nav-link" href="">Find us</a>
           </li>
+        </ul>
+          <ul class="navbar-nav ml-auto mb-2">
           {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-            <p>Hello {{ user.username }}</p>
+            <a href="" class="nav-link">My site: {{user.username}} </a>
           </li>
+          <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+        </li>
           {% else %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
@@ -33,7 +36,8 @@
           </li>
           {% endif %}
           </li>
-        </ul>
+          </ul>
+
       </div>
     </div>
   </nav>
