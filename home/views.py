@@ -28,13 +28,15 @@ class Order(View):
         }
 
         items = request.POST.getlist('items[]')
+        people = request.POST.getlist('people[]')
 
-        for item in items:
+        for index, item in enumerate(items):
             variant_item = Variant.objects.get(pk__contains=int(item))
             item_data = {
                 'id': variant_item.pk,
                 'name': variant_item.name,
-                'price': variant_item.price
+                'price': variant_item.price * int(people[index])
+
             }
 
             order_items['items'].append(item_data)
