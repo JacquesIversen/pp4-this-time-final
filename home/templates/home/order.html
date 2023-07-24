@@ -2,7 +2,6 @@
 
 {% block content %}
 
-<h1>Du har ramt order . html</h1>
 <div class="container mb-5">
     <div class="row justify-content-center mt-1">
         <div class="col-md-12 col-sm-12 p-4">
@@ -18,18 +17,18 @@
                             <div class="d-flex flex-row">
                                 <div class="form-group form-check">
                                     <input type="checkbox" name="items[]" class="form-check-input" value="{{ variant.pk }}">
-                                    <label class="form-check-label">{{ variant.name }}</label>
+                                    <label class="form-check-label">Remember to update a required option. {{ variant.name }}</label>
                                 </div>
                                 <p class="font-weight-bold pl-5">:  {{ variant.price }}$</p>
                             </div>
                             <p>{{ variant.description }}</p>
-                            <input name="people[]" type="number" placeholder="number of people" default="1">
+                            <input name="people[]" type="number" placeholder="Amount" default="1">
                         </div>
                     </div>
                     <hr />
                 {% endfor %}
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="button" class="button-style" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Send Order
   </button>
   
@@ -38,7 +37,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Are you sure you picked the right Kayak?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Are you sure ?</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-footer">
