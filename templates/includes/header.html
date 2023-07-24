@@ -10,14 +10,33 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2">
+          {% if user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'order' %}">Book Here!</a>
           </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal" href="{% url 'account_login' %}">Book Here!</a>
+          </li>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">You must be logged in to make a booking</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <a href="{% url 'account_login' %}" class="btn btn-primary">Go to login</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+
           <li class="nav-item">
             <a class="nav-link" href="{% url 'pricing' %}">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Find us</a>
           </li>
         </ul>
           <ul class="navbar-nav ml-auto mb-2">
