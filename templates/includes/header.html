@@ -14,7 +14,7 @@
             <a class="nav-link" href="{% url 'order' %}">Book Here!</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" href="">Pricing</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Find us</a>
@@ -22,6 +22,7 @@
           {% if user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+            <p>Hello {{ user.username }}</p>
           </li>
           {% else %}
           <li class="nav-item">

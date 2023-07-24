@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView
 from django.views import View
 from django.shortcuts import render
-from .models import Variant, Duration, OrderModel
+from .models import Variant, OrderModel
 
 
 class HomeView(TemplateView):
@@ -12,16 +12,11 @@ class HomeView(TemplateView):
 
 class Order(View):
     def get(self, request, *args, **kwargs):
-        # get every Variant from each duration
-        full = Variant.objects.filter(category__name__contains='Full')
-        half = Variant.objects.filter(category__name__contains='Half')
-        hourly = Variant.objects.filter(category__name__contains='Hourly')
+        variants = Variant.objects.all()
 
         # pass into context
         context = {
-            'Full': full,
-            'Half': half,
-            'Hourly': hourly,
+            'variants': variants,
         }
 
         # render the template
@@ -60,3 +55,31 @@ class Order(View):
         }
 
         return render(request, 'home/order_confirmation.html', context)
+
+        
+class Pricing(View):
+    def get(self, request, *args, **kwargs):
+        variant_items = VariantItem.objects.all()
+
+        context = {
+            'variant_items': variant_items
+        }
+
+        return render(request, 'home/pricing.html', context)
+
+
+class VariantSearch(View):
+    def get(self, request, *args, **kwargs):
+        query = self.request.GET.get("q")
+
+        variant_items = VariantItem.objects.filter(
+            Q(name__icontains=query) |
+            Q(price__icontains=query) |
+            Q(description__icontains=query)
+        )
+
+        context = {
+            'variant_items': variant_items
+        }
+
+        return render(request, 'home/pricing.html', context)
