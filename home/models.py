@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
 
 class Variant(models.Model):
@@ -16,6 +17,7 @@ class OrderModel(models.Model):
         ('Awaiting Pickup', 'Awaiting Pickup'),
         ('Delivered', 'Delivered'),
     )
+    user = models.ForeignKey(get_user_model(), on_delete=models.SET_NULL, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
     price = models.DecimalField(max_digits=7, decimal_places=2)
     status = models.CharField(max_length=200, null=True, choices=STATUS)

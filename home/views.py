@@ -51,7 +51,7 @@ class Order(View):
             price += item['price']
             item_ids.append(item['id'])
 
-        order = OrderModel.objects.create(price=price)
+        order = OrderModel.objects.create(price=price, user=request.user)
         order.items.add(*item_ids)
 
         context = {
@@ -89,7 +89,48 @@ def createOrder(request):
 
 @login_required
 def profile(request):
+
     user = request.user
-    print(user.email)
-    context = {'user_my_site':user}
+
+    my_orders = OrderModel.objects.filter(user=user)
+
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        username = request.POST.get('username')
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+
+        if email:
+            user.email = email
+            user.save()
+        if username:
+            user.username = username
+            user.save()
+        if first_name:
+            user.first_name = first_name
+            user.save()
+        if last_name:
+            user.last_name = last_name
+            user.save()
+
+    context = {
+        'user_my_site': user,
+        'my_orders': my_orders
+    }
+
     return render(request, 'home/profile.html', context)
+
+
+def update_order(request, pk):
+
+    order = OrderModel.objects.get(pk=pk)
+
+    if request.method == 'POST':
+        order.delete()
+        return redirect('profile')
+
+    context = {
+        'order': order,
+    }
+
+    return render(request, 'home/order_detail.html', context)

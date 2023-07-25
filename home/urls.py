@@ -6,4 +6,5 @@ urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('create_order', views.createOrder, name='create_order'),
     path('profile', views.profile, name='profile'),
+    path('order/<int:pk>/', views.update_order, name='update-order'),
     ]
