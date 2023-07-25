@@ -27,9 +27,15 @@
                     </div>
                     <hr />
                 {% endfor %}
+
+
 <!-- Button trigger modal -->
 <button type="button" class="button-style" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  {% if user.is_authenticated %}
     Send Order
+    {% else %}
+    Login
+    {% endif %}
   </button>
   
   <!-- Modal -->

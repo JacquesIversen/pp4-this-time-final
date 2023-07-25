@@ -12,8 +12,13 @@ class Variant(models.Model):
 
 
 class OrderModel(models.Model):
+    STATUS = (
+        ('Awaiting Pickup', 'Awaiting Pickup'),
+        ('Delivered', 'Delivered'),
+    )
     created_on = models.DateTimeField(auto_now_add=True)
     price = models.DecimalField(max_digits=7, decimal_places=2)
+    status = models.CharField(max_length=200, null=True, choices=STATUS)
     items = models.ManyToManyField(
         'Variant', related_name='order', blank=True)
 

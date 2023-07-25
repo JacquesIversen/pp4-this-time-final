@@ -1,7 +1,9 @@
 from django.views.generic import TemplateView
 from django.views import View
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import OrderForm
 from .models import Variant, OrderModel
+from django.contrib.auth.decorators import login_required
 
 
 class HomeView(TemplateView):
@@ -9,7 +11,6 @@ class HomeView(TemplateView):
     View to render homepage
     """
     template_name = 'home/index.html'
-
 
 
 class Order(View):
@@ -72,3 +73,23 @@ class Pricing(View):
         return render(request, 'home/pricing.html', context)
 
 
+def createOrder(request):
+
+    form = OrderForm()
+    if request.method == 'POST':
+        # print('printing post', request.POST)
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+
+    context = {'form':form}
+    return render(request, 'home/order_form.html', context)
+
+
+@login_required
+def profile(request):
+    user = request.user
+    print(user.email)
+    context = {'user_my_site':user}
+    return render(request, 'home/profile.html', context)
