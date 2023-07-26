@@ -2,8 +2,20 @@
 
 {% block content %}
 
-<h1>this is profile</h1>
-<p>Hello {{user_my_site}}</p>
+
+
+<div class="container col-md-12">
+<h2>Hello {{user_my_site}}</h2>
+
+<thead class="text-center">
+    <tr>
+        <th scope="col">Order ID</th>
+        <th scope="col">Price</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col"></th>
+    </tr>
+</thead>
 
 <form method="POST" action="{% url 'profile'%}">
     {% csrf_token %}
@@ -19,27 +31,58 @@
 <div class="row justify-content-center">
             <div class="col-md-12 mt-5">
                 <table class="table table-hover table-striped">
-                    <thead>
+                    <thead class="text-center">
                         <tr>
                             <th scope="col">Order ID</th>
                             <th scope="col">Price</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col"></th>
+                            <th scope="col">Product</th>
+                            <th scope="col">View Order</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
                         </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody class="text-center">
                         {% if my_orders %}
                         {% for order in my_orders %}
                         <tr>
                             <th scope="row">{{ order.pk }}</th>
                             <td>{{ order.price }}</td>
-                            <td>{{ order.user.username }}</td>
-                            <td>{{ order.user.email }}</td>
+                            <td>{% for item in order.items.all %}
+                                {{item.name}}<br>
+                            {% endfor %}</td>
                             <td>
                                 <a href="{% url 'update-order' order.pk%}"> view details</a>
                             </td>
+                            <td><button class="button btn-secondary" type='submit' data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                >Edit Order</button></td>     
+                            <td>
+                                <form method="post" action="{% url 'update-order' order.pk %}">
+                                    {% csrf_token %}
+                                    <button class="button btn-secondary" type='submit'>Delete Order</button>
+                                </form>
+                                
+                            </td>
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">You need to Delete this booking and create a new booking</h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                      <a href="{% url 'order' %}" class="btn btn-primary">Delete and create new</a>
+                                      <form method="post" action="{% url 'update-order' order.pk %}">
+                                        {% csrf_token %}
+                                        <button type='submit' class="btn btn-primary"><a href="{% url 'order' %}">Delete and create new</a></button>
+                                    </form>
+
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            
                         </tr>
                         {% endfor %}
                         {% else %}
@@ -49,5 +92,5 @@
                 </table>
             </div>
         </div>
-
+</div>
 {% endblock content %}
