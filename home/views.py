@@ -133,3 +133,18 @@ def update_order(request, pk):
     }
 
     return render(request, 'home/order_detail.html', context)
+
+
+def edit_order(request, pk):
+        
+    order = OrderModel.objects.get(pk=pk)
+
+    if request.method == 'POST':
+        order.delete()
+        return redirect('order')
+
+    context = {
+        'order': order,
+    }
+
+    return render(request, 'home/order_detail.html', context)

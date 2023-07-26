@@ -73,9 +73,9 @@
                                     </div>
                                     <div class="modal-footer">
                                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                      <form method="post" action="{% url 'update-order' order.pk %}">
+                                      <form method="post" action="{% url 'edit_order' order.pk %}">
                                         {% csrf_token %}
-                                        <button type='submit' class="btn btn-primary"><a class="text-white text-decoration-none" href="{% url 'order' %}">Delete and create new</a></button>
+                                        <button type='submit' class="btn btn-primary" >Delete and create new</button>
                                     </form>
 
                                     </div>
