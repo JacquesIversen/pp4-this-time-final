@@ -34,10 +34,15 @@ class Order(View):
 
         for index, item in enumerate(items):
             variant_item = Variant.objects.get(pk__contains=int(item))
+            try:
+                numpeople = int(people[index])
+            except ValueError:
+                numpeople = 1
             item_data = {
                 'id': variant_item.pk,
                 'name': variant_item.name,
-                'price': variant_item.price * int(people[index])
+                'price': variant_item.price * numpeople
+                
 
             }
 
@@ -50,15 +55,20 @@ class Order(View):
             price += item['price']
             item_ids.append(item['id'])
 
-        order = OrderModel.objects.create(price=price, user=request.user)
-        order.items.add(*item_ids)
+        if items: 
 
-        context = {
-            'items': order_items['items'],
-            'price': price
-        }
+            order = OrderModel.objects.create(price=price, user=request.user)
+            order.items.add(*item_ids)
+            
 
-        return render(request, 'home/order_confirmation.html', context)
+            context = {
+                'items': order_items['items'],
+                'price': price 
+            }
+
+            return render(request, 'home/order_confirmation.html', context)
+        else: 
+            return redirect('order')
 
         
 class Pricing(View):

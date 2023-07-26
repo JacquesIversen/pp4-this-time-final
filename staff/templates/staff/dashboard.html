@@ -23,7 +23,9 @@
                             <th scope="col">Total Price</th>
                             <th scope="col">Product</th>
                             <th scope="col">Customer</th>
+                            <th scope="col">Current Status</th>
                             <th scope="col">Status</th>
+                            <th scope="col">Change Status</th>
                         </tr>
                     </thead>
 
@@ -38,7 +40,21 @@
                                 {% endfor %}
                             </td>
                             <td>{{ order.user.email }}</td>
-                            <td>{{ order.status }}</td>
+                            <td>
+                                <form method="post" action="{% url 'change_status' order.pk %}">
+                                {% csrf_token %}
+                                <select id="status_dropdown" name="status">
+                                    <option value="Awaiting Pickup">Awaiting Pickup</option>
+                                    <option value="Delivered">Delivered</option>
+                                  </select>
+                                  </td>
+                                  <td>
+                                    <button type="submit">Update Status</button>
+                                  </td>
+                                  <td>
+                                    {{ order.status }}
+                                  </td>
+                                  </form>
                         </tr>
                         {% endfor %}
                     </tbody>
