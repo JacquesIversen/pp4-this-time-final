@@ -1,7 +1,6 @@
 from django.views.generic import TemplateView
 from django.views import View
 from django.shortcuts import render, redirect
-from .forms import OrderForm
 from .models import Variant, OrderModel
 from django.contrib.auth.decorators import login_required
 
