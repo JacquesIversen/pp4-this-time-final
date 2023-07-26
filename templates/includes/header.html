@@ -40,12 +40,17 @@
           </li>
         </ul>
           <ul class="navbar-nav ml-auto mb-2">
-          {% if user.is_authenticated %}
+            {% if user.is_authenticated %}
           <li class="nav-item">
             <a href="{% url 'profile' %}" class="nav-link">Go to your Profile</a>
           </li>
           <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
         </li>
+        {% if user.is_staff %}
+        <li class="nav-item">
+          <a href="{% url 'dashboard' %}" class="nav-link">Dashboard</a>
+        </li>
+        {% endif %}
           {% else %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
