@@ -2,19 +2,33 @@
 
 {% block content %}
 
-this is the order number: {{order.pk}} <br>
 
-{% for item in order.items.all %}
-    {{item.name}}<br>
-{% endfor %}
-{{order.user}} <br>
-{{order.created_on}}<br>
-{{order.price}} $<br>
+<div class="container text text-center mt-5">
+    <div class="row">
+      <div class="col">
+        <p class="font-weight-bold">Dear {{user_my_site.first_name}} "First Name"
+            <br>
+            <h4>This is your order:</h4>
+            <br> Order number: {{order.pk}}
+            <br> Booked: 
+                {% for item in order.items.all %}
+                    {{item.name}}
+                {% endfor %}
+            <br>Username: {{order.user}} 
+            <br>Booked at: {{order.created_on}}
+            <br>Total Price: {{order.price}} $
+        </p>
+    </div>
+
+
+
+
 
 <form method="post" action="{% url 'update-order' order.pk %}">
     {% csrf_token %}
-    <button type='submit'> Delete </button>
+    <p>Do you wish to delete your order?</p><button type='submit'> Delete </button>
 </form>
 
+</div>
 
 {% endblock content %}

@@ -4,33 +4,30 @@
 
 
 
-<div class="container col-md-12">
+<div class="container col-md-12 mt-4 mb-5">
 <h2>Hello {{user_my_site}}</h2>
 <div class="p-5 ">
 <form method="POST" action="{% url 'profile'%}">
     {% csrf_token %}
     <h2>My details:</h2>
-    <p>Email: <span class="px-2">{{user_my_site.email}} </span></p><span>Change Email: <input type="text" name="email" placeholder="{{user_my_site.email}}" /></span>
-    <span>Change Email: <input type="text" name="email" placeholder="{{user_my_site.email}}" /></span>
+    <p>Email: <span class="px-2">{{user_my_site.email}} </span></p>
+    <span>Change Email to: <input type="text" name="email" placeholder="New Email Here"/></span>
+    <button type="submit" class="button-style" >Change Email</button>
+    <hr>
     <p>Username: <span class="px-2">{{user_my_site.username}} </span></p>
-    <span>Change Email: <input type="text" name="email" placeholder="{{user_my_site.email}}" /></span>
+    <span>Change Username to: <input type="text" name="username" placeholder="New Username Here"/></span>
+    <button type="submit" class="button-style" >Change Username</button>
+    <hr>
     <p>First Name: <span class="px-2">{{user_my_site.first_name}} </span></p>
+    <span>Update your name details: <input type="text" name="first_name" placeholder="Enter your First Name"/></span>
+    <button type="submit" class="button-style" >Update</button>
+    <hr>
     <p>last Name: <span class="px-2">{{user_my_site.last_name}} </span></p>
-
-
+    <span>Update your name details: <input type="text" name="last_name" placeholder="Enter your Last Name"/></span>
+    <button type="submit" class="button-style" >Update</button>
+    <hr>
 </form>
 </div>
-
-<form method="POST" action="{% url 'profile'%}">
-    {% csrf_token %}
-    <input type="text" name="email" placeholder="{{user_my_site.email}}" />
-    <input type="text" name="username" placeholder="{{user_my_site.username}}" />
-    <input type="text" name="first_name" placeholder="{{user_my_site.first_name}}" />
-    <input type="text" name="last_name" placeholder="{{user_my_site.last_name}}" />
-    <button type="submit" class="button-style" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        submit
-    </button>
-</form>
 
 <div class="row justify-content-center">
             <div class="col-md-12 mt-5">
