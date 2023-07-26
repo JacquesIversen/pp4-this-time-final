@@ -32,7 +32,7 @@ DEBUG = True
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-jacquesiver-pp4thistime-mz4kt6wbws3.ws-eu102.gitpod.io']
 
-ALLOWED_HOSTS = ['8000-jacquesiver-pp4thistime-mz4kt6wbws3.ws-eu102.gitpod.io']
+ALLOWED_HOSTS = ['8000-jacquesiver-pp4thistime-mz4kt6wbws3.ws-eu102.gitpod.io', 'project4-final-c54c1eeb1fef.herokuapp.com']
 
 
 # Application definition
