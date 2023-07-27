@@ -1,4 +1,4 @@
-# Lake Boatandhoes Rental 
+# Lake Meatgrinder Rentals 
 
 This rental company is fortunately fictional and follows a strict businessplan to ensure the predator wildlife of the ecosystem by feeding happy paying tourist to them. The physical part of the store is thought to handle all security policy, payment and local storage. The productstorage of the facility is thought to be endless, as the company recieve thousands of Kayak donations daily from numerous NGO's. This app is designed to make you flick a smile, if that doesn't happen the dev would consider it a failure. 
 
@@ -10,23 +10,87 @@ https://project4-final-c54c1eeb1fef.herokuapp.com/
 ## Contents
 
 * UX Design
+    * User Experience
     * Site Goals
     * Agile Planning
-    * User Stories
-        * User Stories
         * Epics
-    * Design
-    * Features
-    * Technologies Used
-    * Deployment
-    * Testing
-    * Credits
+        * User Stories
+* Design
+    * Typography
+    * Images
+    * Colours
+    * Logo
+* Wireframes
+* Features
+    * General Features
+    * Considered Features
+    * Accessibility
+* Technologies Used
+    - Packages
+    - Installments
+    - Languages
+* Deployment
+* Testing
+* Credits
+
+### User Experience
+This content of the site is highly satirical and is not to be taken serious, unless you though Sharknado was a documentary. The landing page contain a small text, stating, you'll might lose your life using the company services: 
+
+User will find a a CTA in the header, and one button closest to the top of the page with Pricing and FAQ page beneath it.
+
+### Site Goals
+This site aims to make bookings for kayak and SUP Boards easy for the customer. They do however have to create a profile before booking, this is because the companyowner crave customer information for it to upsell possibly everything. 
+The site also grants as a daily booking inventory for the staff. They will have the possibility to update status when recieving customers instore.
+
+## Agile Planning
+This project was devoloped using agile methodologies by small sprints, spaced out about 5 weeks. 
+
+Planning was thought out using the MoSCoW-model. This model would stay the benchmark, however assignment of values to userstories varied alot. Priority would change, if difficulty proved excessive and caused time consumption to wander. 
+
+Kanban Board was designed in Jira, but for this project followed in physical example. 
+
+### Epics:
+- Epic 1: Basic Setup
+    - Make sure django is installed landing page is successfull. 
+    - Mapping directory, and creating folders, files etc. 
+    - Installing Packages to withhold thought design.
+- - -
+- Epic 2: Creating users and Admin.
+    - Django AllAuth installation
+    - Creating Superuser
+    - Testing MVT format is responding
+- - -
+- Epic 3: Creating Models
+    - Designing models & Views to fit design
+    - Admin creating products
+- - -
+- Epic 4: Booking, and pricing
+    - Displaying admin created content
+    - Creating front-end design for the user
+    - Back-end design for data
+- - -
+- Epic 5: Updating Orders
+    - CRUD functionality on orders.
+    - Staff ordermanagement.
+    - Bug solvering
+- - -
+- Epic 6: Designing endpages:
+    - Testing endpoints and designing stand alone pages. 
+    - Final touches and bug solvering
+    - Responsive design
+- - -
+- Epic 7: Deployment and Documentation
+    -  Deployment
+    - Documentation
+- - -
+- Epic 8: Testing:
+    - Manual Testing
+    - Testing Documentation
+- - - 
 
 
 
 ### User Stories
-
-
 ### Developer: (Dev)
 - As Dev, I need to install/create the project and app files.
 - As Dev, I need to setup base/index.html to extend other html files upon.
@@ -75,23 +139,100 @@ https://project4-final-c54c1eeb1fef.herokuapp.com/
 - As an admin, I can access stored booking data.
 
 
+## Design
+### Typography
+This project utilizes the following fonts:
+ - Days One: This font is used across the application for general text. It can be found at 
+ - Google Fonts.
+Kdam Thmor Pro: This font is also used across the application. It can be found at Google Fonts.
+
+### Img files
+Google --> search(x) --> Pictures --> Go to picture website --> Download --> (convert to webp) --> Upload into images folder
+
+### Colors
+All colors are taken from bootstrap with small exceptions:
+![wf3](docs/wireframes/colors.png)
+
+### Logo
+Taken from google notorious site 1, when searching for kayak logo.
 
 
---- 
-pip3 install django
-django-admin startproject main .
-python3 manage.py startapp home
-python3 manage.py startapp staff
-pip3 install django-allauth
--- Templates:
-ls ../.pip-modules/lib
-cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/* ./templates
--- Superuser / admin:
-python3 manage.py createsuperuser
--- Crispy forms:
-pip3 install django-crispy-forms
-pip3 install crispy_bootstrap5
-pip3 freeze --local > requirements.txt
--- Img management:
-pip3 install pillow
+
+### Wireframes
+I have used CANVA to create the wireframes. Each wireframe stands for the individual .html pages. Boxes are added with words for intent. Subject is to change during the production of this website.
+
+
+- Home page
+![wf3](docs/wireframes/wf.png)
+- Booking Page
+
+- Pricing page
+![wf3](docs/wireframes/wire_pricing.png)
+
+- About us
+
+- Profile
+![wf3](docs/wireframes/wire_profile.png)
+
+
+- Dashboard (admin)
+
+- Login
+![wf3](docs/wireframes/wire_login.png)
+
+
+- Sign up / Register
+![wf3](docs/wireframes/wire_signup.png)
+
+
+- Logout
+![wf3](docs/wireframes/wire_signout.png)
+
+
+## Features
+
+### Landing Page
+A warm welcome awaits you at our Landing page. Here, you'll be introduced to the unique offerings of Lake Meatgrinder, including the unparalleled beauty of the world's deepest lake and the adventurous water activities we offer.
+
+**Key Features**
+- A brief introduction to Lake Boatandhoes
+- Information about the water activities offered
+- Links to Login, Pricing, booking and Contact/Faq page
+
+### Pricing Page
+This page provides comprehensive information about the pricing details of our services and activities. It's designed to be straightforward and easy to understand, offering guests clarity on their potential expenditure during their adventure. This page also introduces visitors to the wide range of water activities available, providing details about each one.
+
+**Key Features**
+- Detailed pricing information for different activities and services
+- Detailed descriptions of each water activity offered
+- Inspiring visuals and compelling content
+
+### Login/Register Page
+This page provides a user-friendly form where logged-in guests can easily book their desired water activities. It's designed to provide an easy and hassle-free booking experience.
+**Key Features**
+- User-friendly booking form
+- Instant booking confirmation
+
+
+### Features to include:
+
+
+## Installs
+
+- pip3 install django
+- django-admin startproject main .
+- python3 manage.py startapp home
+- python3 manage.py startapp staff
+- pip3 install django-allauth
+### Templates:
+- ls ../.pip-modules/lib
+- cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/* ./templates
+### Superuser / admin:
+- python3 manage.py createsuperuser
+### Crispy forms:
+- pip3 install django-crispy-forms
+- pip3 install crispy_bootstrap5
+- pip3 freeze --local > requirements.txt
+### Img management:
+- pip3 install pillow
 
