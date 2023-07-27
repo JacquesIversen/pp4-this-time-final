@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'staff',
-    #forms
+    # forms
     'crispy_forms',
     'crispy_bootstrap5',
 ]
@@ -64,6 +64,14 @@ ACCOUNT_EMAIL_VERIFCATION = 'none'
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/' # edit this to dashboard
+
+# Email form
+DEFAULT_FROM_EMAIL = 'idontwantyourenquiries@gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'username'
+EMAIL_HOST_PASSWORD = 'password'
+EMAIL_PORT = 587
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',

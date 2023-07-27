@@ -1,5 +1,7 @@
 from django.views.generic import TemplateView
 from django.views import View
+from django.core.mail import send_mail
+from django.conf import settings
 from django.shortcuts import render, redirect
 from .models import Variant, OrderModel
 from django.contrib.auth.decorators import login_required
@@ -158,3 +160,12 @@ def edit_order(request, pk):
     }
 
     return render(request, 'home/order_detail.html', context)
+
+
+def faq(request):
+    return render(request, 'home/faq.html')
+
+
+def contact_success(request):
+    print("Hahaha, We dont care about their claim")
+    return render(request, 'home/contact_success.html')

@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container my-4">
+    <section>
+        <h3 class="text-center mb-4 pb-2 fw-bold">FAQ</h3>
+        <p class="text-center mb-5">
+          Find the answers for the most frequently asked questions below
+        </p>
+      
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4">
+            <h6 class="mb-3">What safety measures are in place to protect visitors from the dangerous lake's wildlife?</h6>
+            <p>
+              Seasoning and Marinate are provided to all visitors before renting kayaks or SUP-boards.
+            </p>
+          </div>
+      
+          <div class="col-md-6 col-lg-4 mb-4">
+            <h6 class="mb-3 ">How far should visitors stay away from the sharks and crocodiles while on kayaks or SUP-boards?</h6>
+            <p>
+                Visitors must maintain a maximum distance of 50 meters (164 feet) from the sharks and crocodiles.
+            </p>
+          </div>
+      
+          <div class="col-md-6 col-lg-4 mb-4">
+            <h6 class="mb-3">Is there a designated swimming area in the lake where it's safe from the predators?
+
+
+            </h6>
+            <p>
+                No, there is no designated swimming area due to the constant presence of sharks and crocodiles.
+            </p>
+          </div>
+      
+          <div class="col-md-6 col-lg-4 mb-4">
+            <h6 class="mb-3">What is the maximum number of people allowed on a kayak or SUP-board at a time?
+            </h6>
+            <p>
+                The maximum number of people allowed on a kayak or SUP-board is two, to ensure better stability and safety.
+            </p>
+          </div>
+      
+          <div class="col-md-6 col-lg-4 mb-4">
+            <h6 class="mb-3">Are there any specific hours when visitors are not allowed to use the kayaks and SUP-boards?
+            </h6>
+            <p>Yes, when wildlife have just been feeded, this causes them to be sloppy and inactive. The SUP-boards are espicially popular after sunset</p>
+          </div>
+      
+          <div class="col-md-6 col-lg-4 mb-4">
+            <h6 class="mb-3">Do visitors need prior experience in kayaking or SUP-boarding to rent the equipment?</h6>
+            <p>
+                No, prior experience is not necessary as beginners serve the best taste.
+            </p>
+          </div>
+        </div>
+      </section>
+</div>
+<div class="container">
+    <!--Section: Contact v.2-->
+<section class="mb-4">
+
+    <!--Section heading-->
+    <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+    <!--Section description-->
+    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
+        a matter of hours to help you.</p>
+
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="name" name="name" class="form-control" required>
+                            <label for="name" class="">Your name</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="email" name="email" class="form-control" required>
+                            <label for="email" class="">Your email</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-12">
+
+                        <div class="md-form">
+                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea" required></textarea>
+                            <label for="message">Your message</label>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Grid row-->
+
+            </form>
+
+            <div class="text-center text-md-left">
+                <a class="button-style" href="{% url 'contact_success' %}">Send</a>
+            </div>
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-3 text-center">
+            <ul class="list-unstyled mb-0">
+                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                    <p>10500 N De Anza Blvd, Cupertino, CA 95014, USA</p>
+                </li>
+
+                <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                    <p>+1 408-996-1010</p>
+                </li>
+
+                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                    <p>contact@lakereturn.com</p>
+                </li>
+            </ul>
+        </div>
+        <!--Grid column-->
+
+    </div>
+
+</section>
+<!--Section: Contact v.2-->
+</div>
+{% endblock %}

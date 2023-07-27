@@ -1,111 +1,80 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Lake Boatandhoes Rental 
 
-Welcome JacquesIversen,
+This rental company is fortunately fictional and follows a strict businessplan to ensure the predator wildlife of the ecosystem by feeding happy paying tourist to them. The physical part of the store is thought to handle all security policy, payment and local storage. The productstorage of the facility is thought to be endless, as the company recieve thousands of Kayak donations daily from numerous NGO's. This app is designed to make you flick a smile, if that doesn't happen the dev would consider it a failure. 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+You'll find the livelink for the site here: 
+https://project4-final-c54c1eeb1fef.herokuapp.com/
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Contents
 
-`python3 -m http.server`
+* UX Design
+    * Site Goals
+    * Agile Planning
+    * User Stories
+        * User Stories
+        * Epics
+    * Design
+    * Features
+    * Technologies Used
+    * Deployment
+    * Testing
+    * Credits
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### User Stories
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+### Developer: (Dev)
+- As Dev, I need to install/create the project and app files.
+- As Dev, I need to setup base/index.html to extend other html files upon.
+- As Dev, I need to setup and proove function of static, media and templates files in directories.
+- As Dev, I need to Decide on which CDN, and Script to choose and install.
+- As Dev, I need to design a Header and footer to suit design ideas. 
+- As Dev, I need to install, implement and test Django-Allauth
+- As Dev, I need to Update Procfile and Requirements
+- As Dev, I need to Use Django DEBUG functions to locate deployment issues.
+- As Dev, I need to locate and listen to the Heroku buildlog to adapt requirements.
+- As Dev, I need to deploy the final site, without compromising my ability to still edit the app.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### User: (Customer)
+- As a Customer, I want to see what this company has to offer. 
+- As a Customer, I want to know how to locate and contact this company.
+- As a Customer, I want to be able to book at least 1 product for any given timeperiod.
+- As a Customer, I would like multiple options of products.
+- As a Customer, I would like multiple options of durations.
+- As a Customer, I would like a personal login page.
+- As a Customer, I would like to be able to change my password if forgotten. 
+- As a Customer, I need to be able to view, delete or change my booking.
+- As a logged-in user, I can make a booking so that I can reserve activities for one or more guests at a specific date and time, view and update my existing booking/s or delete any existing booking.
+- As a site user, I can view essential information so that I can find out about the business hours, contact number, and other important information.
+- As a site user, I can view photos so that I get a feel of the atmosphere and what activities are offered.
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
-------
+### Staff and Company Owner
+- As the owner, I would like to have a home page with vital information and a obvious CTA
+- As the owner, I would like the booking to be as easy and swift as possible to avoid 2nd. thougts.
+- As the owner, I want my staff to easily locate bookings with minimum effort. 
+- As the owner, I want the customers to pay beforehand to ensure revenue in the business.
+- As the owner, I want the contactform to be an endless and troublefull process to minimize claims and returns.
+- As the owner, I want my staff to easily edit and manage inventory and products
+- As the owner, I want my staff to have CRUD capabilities in the products pages
+- As the owner, I want to limit my dependencies to edit site.
+- As Staff, I can manage the bookings so that I can create, view, update, and delete any bookings and avoid any double bookings.
+- As Staff, I can manage the bookings so that I can create, view, update, and delete any bookings and avoid any double bookings.
+- As Staff, I can monitor todays bookings, revenue and customer amount.
 
-## Release History
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Admin / Superuser
+- As an admin, I can manage registered users so that I can monitor and control user access.
+- As an admin, I can add or remove details about the business and its surrounding so that the site information stays updated.
+- As an admin, I can access stored booking data.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
 
 
 --- 
