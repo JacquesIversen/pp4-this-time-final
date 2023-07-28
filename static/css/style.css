@@ -2,10 +2,9 @@
 
 html,
 body {
-    height: 100%;
+    height: calc(100vh - 100px);
     font-family: 'Days One', sans-serif;
     font-family: 'Kdam Thmor Pro', sans-serif;
-    margin-bottom: 45px;
 }
 
 body {
@@ -115,7 +114,6 @@ hr.rounded {
 
 /* Footer */
 footer {
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
