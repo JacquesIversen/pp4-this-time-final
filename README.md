@@ -191,27 +191,198 @@ I have used CANVA to create the wireframes. Each wireframe stands for the indivi
 
 ## Features
 
-### Landing Page
-A warm welcome awaits you at our Landing page. Here, you'll be introduced to the unique offerings of Lake Meatgrinder, including the unparalleled beauty of the world's deepest lake and the adventurous water activities we offer.
+### Navbar 
+The Navbar follow 2 designs, according to user-auth status.
+
+The Navbar is present in all pages, and extends base.html.
+- Not logged in: 
+
+![wf3](docs/readme_img/navbar-not-logged-id.png)
+This navbar contains following:
+- Book here link, it will issue a modal, telling you to log in before you book. 
+- Pricing page, a small info about product prior to booking
+- About us, link to Faq & Contact page:
+- Logo serves as Home/index link
+
+Right side holds Register & Login
+
+- Logged in: (admin)
+
+![wf3](docs/readme_img/navbar-logged-in.png)
+This navbar contains following:
+- Book here, taking you to booking site
+- Pricing page, a small info about product prior to booking
+- About us, link to Faq & Contact page:
+- Logo serves as Home/index link
+
+Right side holds Profile link, and logout button (dashboard will only show if StaffCI, or admin)
+
+### Landing Page / Home Page
+A warm welcome awaits you at our Landing page. Here, you'll be introduced to the unique offerings of Lake Ale, including the unparalleled beauty of the world's deepest lake and the adventurous water activities we offer.
+
+A full width hero image with a small amout of text and a CTA, a model will show if user is not logged in, sending the user to login page. If logged in, return booking page. 
+
+A beautiful full generated text to imspire the user to spend some money in the business. 
+
+3 Responsive Buttons added beneath text-part
+- Not logged in: 
+    - Log in to make a booking
+    - Pricing
+    - About us
+
+![wf3](docs/readme_img/Loggedinindex.png)
+
+
+
+![wf3](docs/readme_img/index-not-li.png)
+
+- Logged in: 
+    - Make a booking!
+    - Pricing
+    - About us
+
+**Modal if not logged in:**
+
+![wf3](docs/readme_img/modalindex.png)
+
+### Footer
+
+Footer is made in an elegant and simple design, displaying only 4 items:
+- Home, Links to home/index
+- Pricing, links to pricing
+- Staff Login, this is a link to dashboard, only visuable if Staff/admin
+- Terms and conditions
+
+
+![wf3](docs/readme_img/footer.png)
+
+
+
+
+
 
 **Key Features**
 - A brief introduction to Lake Boatandhoes
 - Information about the water activities offered
 - Links to Login, Pricing, booking and Contact/Faq page
 
+## Rest of examples will show as admin logged in.
+
 ### Pricing Page
 This page provides comprehensive information about the pricing details of our services and activities. It's designed to be straightforward and easy to understand, offering guests clarity on their potential expenditure during their adventure. This page also introduces visitors to the wide range of water activities available, providing details about each one.
+
+![wf3](docs/readme_img/pricing.png)
+
 
 **Key Features**
 - Detailed pricing information for different activities and services
 - Detailed descriptions of each water activity offered
 - Inspiring visuals and compelling content
 
+### About us Page
+Here are 6 relevant questions for the user to know before claiming a booking displayed in a faq box.
+
+- A contact form only added for design purposes
+- An adress who’ll take you to Apple Inc in California
+- Imaginary email adress and phonenumber.
+
+A MH for a real business, but CH for this particular project. Is the functionality of the form, and ist high in ranking to be done, if time were more fortunate.
+
+![wf3](docs/readme_img/about-us.png)
+
+
+
+
+### Booking Page
+This page displays different products to the user. The user is left with options to check a product, and the choose the amount of people they'd like to bring. 
+- Should they choose to only check the box, a value of 1 is automaticly added, and order is issued.
+- Would they only type in amount and not check the box, the site will reload, not issue any booking. A nice CouldHave here would be a displayed modal, or message to inform the user, that they made a mistake. 
+- At the bottom of the page, user will find a send order button, who ticks a second "are you sure?" confirmation.
+- User is then redirected to order confirmation:
+
+![wf3](docs/readme_img/order.png)
+
+
+**Key Features**
+- Full Availability
+- Inspiring visuals and compelling content
+- Detailed descriptions of each water activity offered
+- Detailed pricing information for different activities and services
+
+### Order Confirmation
+After making a booking, user will find them here. Displaeyd are following:
+- Go to homepage, links to home
+- Visit your profile
+- Order Summary
+- Displayed bookings, with information and price.
+- A short information to the user, on how to claim their booking.
+- A calculated price total for only this booking.
+- Greeting.
+
+![wf3](docs/readme_img/order-conf.png)
+
+
+### Your / My Profile
+The Profile page is definitely the most lacking in UX/UI design. This is due to lack of development pace. Most definitely a need in future updates:
+
+User is greeted with their username. 
+
+In My Details: User will find CRUD functions to change following, but not password.
+- Email
+- Username
+- First & Last Name
+
+At the lower part of site, user will find a table containing their order
+
+![wf3](docs/readme_img/myprofile.png)
+
+They'll have the option to view Orderdetails, "Edit" or delete it. 
+
+Delete button has no second validator, this is due for a future update. 
+
+"Edit will delete their current order, and indulge them to create a new booking, redirecting them straight to booking page."
+
+![wf3](docs/readme_img/modal-edit.png)
+
+**No Orders**
+User will find information indulging them to book straight away, with a direct link to booking.
+
+![wf3](docs/readme_img/no-booking.png)
+
+**View Details:**
+The details accounts for: 
+- Order Number
+- What is ordered: variant/product
+- What user ordered it:
+- Booking time and date:
+- Total price of this exact booking.
+- Only one, rather foolish CTA, indulging the user to delete their order.
+
+![wf3](docs/readme_img/order-detail.png)
+
+
+### Dashboard
+This is Dashboard only accessible from admin & Staff user.
+
+Here the staff will have todays revenue and customer amount displayed. Staff can also update status of the order from None --> Awaiting Pickup --> Delivered. Its believed the staff is capable of using 2nd part billing system to match order ID, amount and status. 
+
+Product: is only used for staff instore.
+
+A nice feature here would be a date-specific ordertable, in order for the staff to find previous bookings. Alongside a status of paid/notpaid maybe a comments section, and a link to Customer details. 
+
+![wf3](docs/readme_img/Staff-Dash.png)
+
 ### Login/Register Page
 This page provides a user-friendly form where logged-in guests can easily book their desired water activities. It's designed to provide an easy and hassle-free booking experience.
-**Key Features**
-- User-friendly booking form
-- Instant booking confirmation
+
+- Design is created thanks to Django Crispy Forms and AllAuth Templates, and all follow same edited design principle. 
+    - Login 
+    - Sign up
+    - Log Out
+    - Forgot Password
+
+![wf3](docs/readme_img/signup.png)
+
 
 
 ### Features to include:
