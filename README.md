@@ -562,6 +562,8 @@ This project has been completed with help from following:
     - [Code Affection](https://www.youtube.com/@CodAffection)
 - Tutor assistance in deployment
 
+A special thanks to my Girlfriend for the use of her Jira Account, alongside her assistance in understanding SCRUM and Agile methodologies.  
+
 
 
 

@@ -28,7 +28,7 @@ if os.path.isfile("env.py"):
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-jacquesiver-pp4thistime-mz4kt6wbws3.ws-eu102.gitpod.io'
