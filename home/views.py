@@ -24,7 +24,7 @@ class Order(View):
         }
 
         # render the template
-        return render(request, 'home/order.html', context) # Make sure to edit this template.
+        return render(request, 'home/order.html', context)
 
     def post(self, request, *args, **kwargs):
         order_items = {
@@ -44,7 +44,7 @@ class Order(View):
                 'id': variant_item.pk,
                 'name': variant_item.name,
                 'price': variant_item.price * numpeople
-                
+
 
             }
 
@@ -57,22 +57,21 @@ class Order(View):
             price += item['price']
             item_ids.append(item['id'])
 
-        if items: 
+        if items:
 
             order = OrderModel.objects.create(price=price, user=request.user)
             order.items.add(*item_ids)
-            
 
             context = {
                 'items': order_items['items'],
-                'price': price 
+                'price': price
             }
 
             return render(request, 'home/order_confirmation.html', context)
-        else: 
+        else:
             return redirect('order')
 
-        
+
 class Pricing(View):
     def get(self, request, *args, **kwargs):
         variant_items = Variant.objects.all()
@@ -94,7 +93,7 @@ def createOrder(request):
             form.save()
             return redirect('/')
 
-    context = {'form':form}
+    context = {'form': form}
     return render(request, 'home/order_form.html', context)
 
 
@@ -148,7 +147,7 @@ def update_order(request, pk):
 
 
 def edit_order(request, pk):
-        
+
     order = OrderModel.objects.get(pk=pk)
 
     if request.method == 'POST':

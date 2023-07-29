@@ -10,7 +10,9 @@ class Dashboard(LoginRequiredMixin, UserPassesTestMixin, View):
         # get the current date
         today = datetime.today()
         orders = OrderModel.objects.filter(
-            created_on__year=today.year, created_on__month=today.month, created_on__day=today.day)
+            created_on__year=today.year,
+            created_on__month=today.month,
+            created_on__day=today.day)
 
         # loop through the orders and add the price value
         total_revenue = 0
@@ -25,8 +27,6 @@ class Dashboard(LoginRequiredMixin, UserPassesTestMixin, View):
         }
 
         return render(request, 'staff/dashboard.html', context)
-
-
 
     def test_func(self):
         return self.request.user.groups.filter(name='Staff').exists()
@@ -44,8 +44,4 @@ def change_status(request, pk):
             order.status = status
             order.save()
 
-
     return redirect('dashboard')
-
-
-    

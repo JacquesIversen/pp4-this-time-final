@@ -1,6 +1,9 @@
 # Lake Ale Rentals
 
-This rental company is completely fictional. The physical part of the store is thought to handle all security policy, payment and local storage. The productstorage of the facility is thought to be endless, as the company recieve thousands of Kayak donations daily from numerous NGO's. 
+This rental company is completely fictional. The physical part of the store is thought to handle all security policy, payment and local storage. The productstorage of the facility is thought to be endless, as the company recieve thousands of Kayak donations daily from numerous NGO's.
+
+![wf3](docs/readme_img/amiresponsive.png)
+
 
 
 You'll find the livelink for the site here: 
@@ -11,6 +14,7 @@ You'll find the livelink for the site here:
 
 * [UX Design](#UX-Design)
     * [User Experience](#User-Experience)
+    * [Requirements](#requirements)
     * [Site Goals](#Site-Goals)
     * [Agile Planning](#Agile-planning)
         * [Epics](#epics)
@@ -54,7 +58,29 @@ This project was devoloped using agile methodologies by small sprints, spaced ou
 
 Planning was thought out using the MoSCoW-model. This model would stay the benchmark, however assignment of values to userstories varied alot. Priority would change, if difficulty proved excessive and caused time consumption to wander. 
 
-Kanban Board was designed in Jira, but for this project followed in physical example. 
+Kanban Board was designed in Jira.
+
+![wf3](docs/readme_img/Kanban.png)
+
+![wf3](docs/readme_img/Kanban2.png)
+
+
+I have chosen to set up my Kanban board with the following columns to facilitate an organized and efficient development process:
+* To Do:
+
+I use the "To Do" column as the starting point on the board. This column represents the backlog or the pool of work that needs to be done. It includes all the tasks, user stories, or requirements that are yet to be picked up or started by team members. By having a clear list of tasks in the "To Do" column, I can easily prioritize and plan the team's workload.
+* In Progress:
+
+In the "In Progress" column, I track tasks or user stories that are currently being worked on by team members. Once a team member starts working on a task, it is moved from the "To Do" column to the "In Progress" column. This column provides visibility into what is actively being worked on and helps avoid conflicts or duplication of efforts.
+* Testing:
+
+I have included the "Testing" column to ensure that tasks or user stories have a dedicated stage for quality assurance. When a task is completed by the development team, it is moved to the "Testing" column. This stage helps to validate that the work done meets the required standards and that the functionality is working as expected before moving forward.
+* Done:
+
+The "Done" column represents tasks or user stories that have successfully passed through all the development stages, including testing, and are ready for deployment or delivery. Having a "Done" column allows me to easily track completed tasks and measure the team's progress towards project goals.
+* On Hold:
+
+The "On Hold" column is useful for tasks or user stories that cannot be progressed further at the moment due to various reasons. It could be waiting for additional information, external dependencies, or a decision from stakeholders. By having this column, I can keep track of any potential roadblocks and ensure nothing is forgotten.
 
 ### [Epics](#epics)
 - Epic 1: Basic Setup
@@ -98,17 +124,6 @@ Kanban Board was designed in Jira, but for this project followed in physical exa
 
 
 ## [User Stories](#user-stories)
-### Developer: (Dev)
-- As Dev, I need to install/create the project and app files.
-- As Dev, I need to setup base/index.html to extend other html files upon.
-- As Dev, I need to setup and proove function of static, media and templates files in directories.
-- As Dev, I need to Decide on which CDN, and Script to choose and install.
-- As Dev, I need to design a Header and footer to suit design ideas. 
-- As Dev, I need to install, implement and test Django-Allauth
-- As Dev, I need to Update Procfile and Requirements
-- As Dev, I need to Use Django DEBUG functions to locate deployment issues.
-- As Dev, I need to locate and listen to the Heroku buildlog to adapt requirements.
-- As Dev, I need to deploy the final site, without compromising my ability to still edit the app.
 
 ### User: (Customer)
 - As a Customer, I want to see what this company has to offer. 
@@ -131,11 +146,7 @@ Kanban Board was designed in Jira, but for this project followed in physical exa
 - As the owner, I would like the booking to be as easy and swift as possible to avoid 2nd. thougts.
 - As the owner, I want my staff to easily locate bookings with minimum effort. 
 - As the owner, I want the customers to pay beforehand to ensure revenue in the business.
-- As the owner, I want the contactform to be an endless and troublefull process to minimize claims and returns.
 - As the owner, I want my staff to easily edit and manage inventory and products
-- As the owner, I want my staff to have CRUD capabilities in the products pages
-- As the owner, I want to limit my dependencies to edit site.
-- As Staff, I can manage the bookings so that I can create, view, update, and delete any bookings and avoid any double bookings.
 - As Staff, I can manage the bookings so that I can create, view, update, and delete any bookings and avoid any double bookings.
 - As Staff, I can monitor todays bookings, revenue and customer amount.
 
@@ -145,6 +156,20 @@ Kanban Board was designed in Jira, but for this project followed in physical exa
 - As an admin, I can add or remove details about the business and its surrounding so that the site information stays updated.
 - As an admin, I can access stored booking data.
 
+
+## [Requirements](#requirements)
+
+### Developer: (Dev)
+- As Dev, I need to install/create the project and app files.
+- As Dev, I need to setup base/index.html to extend other html files upon.
+- As Dev, I need to setup and proove function of static, media and templates files in directories.
+- As Dev, I need to Decide on which CDN, and Script to choose and install.
+- As Dev, I need to design a Header and footer to suit design ideas. 
+- As Dev, I need to install, implement and test Django-Allauth
+- As Dev, I need to Update Procfile and Requirements
+- As Dev, I need to Use Django DEBUG functions to locate deployment issues.
+- As Dev, I need to locate and listen to the Heroku buildlog to adapt requirements.
+- As Dev, I need to deploy the final site, without compromising my ability to still edit the app.
 
 ## [Design](#design)
  
@@ -171,30 +196,37 @@ I have used CANVA to create the wireframes. Each wireframe stands for the indivi
 
 
 - Home page
-![wf3](docs/wireframes/wf.png)
+![wf3](docs/wireframes/homewf.png)
+
 - Booking Page
+![wf3](docs/wireframes/booking.png)
+
 
 - Pricing page
-![wf3](docs/wireframes/wire_pricing.png)
+![wf3](docs/wireframes/pricingwf.png)
 
 - About us
+![wf3](docs/wireframes/faq.png)
+
 
 - Profile
-![wf3](docs/wireframes/wire_profile.png)
+![wf3](docs/wireframes/profile.png)
 
 
 - Dashboard (admin)
+![wf3](docs/wireframes/dashwf.png)
+
 
 - Login
-![wf3](docs/wireframes/wire_login.png)
+![wf3](docs/wireframes/wflogin.png)
 
 
 - Sign up / Register
-![wf3](docs/wireframes/wire_signup.png)
+![wf3](docs/wireframes/loginwf.png)
 
 
 - Logout
-![wf3](docs/wireframes/wire_signout.png)
+![wf3](docs/wireframes/signoutwf.png)
 
 
 ## [Features](#features)

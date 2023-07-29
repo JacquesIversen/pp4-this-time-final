@@ -3,58 +3,60 @@
 {% block content %}
 
 <div class="container mb-5">
-    <div class="row justify-content-center mt-1">
-        <div class="col-md-12 col-sm-12 p-4">
-            <form method="POST">
-                {% csrf_token %}
-                <div class="pt-5">
-                    {% for variant in variants %}
-                    <div class="row">
-                        <div class="col-md-2 col-sm-12">
-                            <img class="rounded" src="{{ variant.image.url }}" width="150" height="100"/>
-                        </div>
-                        <div class="col-md-8 col-sm-12">
-                            <div class="d-flex flex-row">
-                                <div class="form-group form-check">
-                                    <input type="checkbox" name="items[]" class="form-check-input" value="{{ variant.pk }}">
-                                    <label class="form-check-label">Remember to update a required option. {{ variant.name }}</label>
-                                </div>
-                                <p class="font-weight-bold pl-5">:  {{ variant.price }}$</p>
-                            </div>
-                            <p>{{ variant.description }}</p>
-                            <input name="people[]" type="number" placeholder="Amount" default="1">
-                        </div>
-                    </div>
-                    <hr />
-                {% endfor %}
+  <div class="row justify-content-center mt-1">
+    <div class="col-md-12 col-sm-12 p-4">
+      <form method="POST">
+        {% csrf_token %}
+        <div class="pt-5">
+          {% for variant in variants %}
+          <div class="row">
+            <div class="col-md-2 col-sm-12">
+              <img class="rounded" src="{{ variant.image.url }}" width="150" height="100" />
+            </div>
+            <div class="col-md-8 col-sm-12">
+              <div class="d-flex flex-row">
+                <div class="form-group form-check">
+                  <input type="checkbox" name="items[]" class="form-check-input" value="{{ variant.pk }}">
+                  <label class="form-check-label">Remember to update a required option. {{ variant.name }}</label>
+                </div>
+                <p class="font-weight-bold pl-5">: {{ variant.price }}$</p>
+              </div>
+              <p>{{ variant.description }}</p>
+              <input name="people[]" type="number" placeholder="Amount">
+            </div>
+          </div>
+          <hr />
 
+          {% endfor %}
 
-<!-- Button trigger modal -->
-<button type="button" class="button-style" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  {% if user.is_authenticated %}
-    Send Order
-    {% else %}
-    Login
-    {% endif %}
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Are you sure ?</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <!-- Button trigger modal -->
+          <button type="button" class="button-style" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            {% if user.is_authenticated %}
+            Send Order
+            {% else %}
+            Login
+            {% endif %}
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Are you sure ?</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
+      </form>
     </div>
   </div>
-            </form>
-        </div>
-    </div>
 </div>
 {% endblock content %}

@@ -14,7 +14,6 @@ from pathlib import Path
 import os
 
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,14 +24,20 @@ if os.path.isfile('env.py'):
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ["SECRET_KEY"]="my_super^secret@key"
+# SECRET_KEY = os.environ["SECRET_KEY"]="my_super^secret@key"
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-jacquesiver-pp4thistime-mz4kt6wbws3.ws-eu102.gitpod.io']
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-jacquesiver-pp4thistime-mz4kt6wbws3.ws-eu102.gitpod.io'
+    ]
 
-ALLOWED_HOSTS = ['8000-jacquesiver-pp4thistime-mz4kt6wbws3.ws-eu102.gitpod.io', 'project4-final-c54c1eeb1fef.herokuapp.com']
+ALLOWED_HOSTS = [
+    '8000-jacquesiver-pp4thistime-mz4kt6wbws3.ws-eu102.gitpod.io',
+    'project4-final-c54c1eeb1fef.herokuapp.com'
+    ]
 
 
 # Application definition
@@ -63,7 +68,7 @@ ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_EMAIL_VERIFCATION = 'none'
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/' # edit this to dashboard
+LOGIN_REDIRECT_URL = '/'
 
 # Email form
 DEFAULT_FROM_EMAIL = 'idontwantyourenquiries@gmail.com'
@@ -167,8 +172,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 # STATIC_ROOT = BASE_DIR / 'static/'
-
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+# Static root & files must be changed when in development.
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

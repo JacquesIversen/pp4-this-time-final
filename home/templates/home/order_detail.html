@@ -5,30 +5,31 @@
 
 <div class="container text text-center mt-5">
     <div class="row">
-      <div class="col">
-        <p class="font-weight-bold">
-            <br>
-            <h4>This is your order:</h4>
-            <br> Order number: {{order.pk}}
-            <br> Booked: 
+        <div class="col">
+            <div class="font-weight-bold">
+                <br>
+                <h4>This is your order:</h4>
+                <br> Order number: {{order.pk}}
+                <br> Booked:
                 {% for item in order.items.all %}
-                    {{item.name}}
+                {{item.name}}
                 {% endfor %}
-            <br>Username: {{order.user}} 
-            <br>Booked at: {{order.created_on}}
-            <br>Total Price: {{order.price}} $
-        </p>
+                <br>Username: {{order.user}}
+                <br>Booked at: {{order.created_on}}
+                <br>Total Price: {{order.price}} $
+            </div>
+        </div>
+
+
+
+
+
+        <form method="post" action="{% url 'update-order' order.pk %}">
+            {% csrf_token %}
+            <p>Do you wish to delete your order?</p><button type='submit'> Delete </button>
+        </form>
+
     </div>
-
-
-
-
-
-<form method="post" action="{% url 'update-order' order.pk %}">
-    {% csrf_token %}
-    <p>Do you wish to delete your order?</p><button type='submit'> Delete </button>
-</form>
-
 </div>
 
-{% endblock content %}
+    {% endblock content %}
